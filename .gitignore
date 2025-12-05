@@ -1,0 +1,123 @@
+# Aplicación Hola Mundo - Docker
+
+Aplicación web simple en Python Flask dockerizada y publicada en Docker Hub.
+
+## 📋 Descripción
+
+Esta aplicación muestra un mensaje "Hola Mundo" con un diseño moderno. Es parte de una práctica de entrega continua (CI/CD).
+
+## 🚀 Tecnologías utilizadas
+
+- Python 3.11
+- Flask 3.0
+- Docker
+- Docker Hub
+
+## 📦 Imagen en Docker Hub
+
+La imagen está disponible públicamente en:
+```
+docker pull guajo05/hola-mundo:v1.0
+```
+
+## 🛠️ Instalación y uso
+
+### Opción 1: Descargar y ejecutar la imagen de Docker Hub
+```bash
+# Descargar la imagen
+docker pull guajo05/hola-mundo:v1.0
+
+# Ejecutar el contenedor
+docker run -d -p 5000:5000 --name mi-app guajo05/hola-mundo:v1.0
+
+# Abrir en el navegador
+# http://localhost:5000
+```
+
+### Opción 2: Construir la imagen localmente
+```bash
+# Clonar el repositorio
+git clone https://github.com/Guajo05/app-hola-mundo.git
+cd app-hola-mundo
+
+# Construir la imagen
+docker build -t guajo05/hola-mundo:v1.0 .
+
+# Ejecutar el contenedor
+docker run -d -p 5000:5000 --name mi-app guajo05/hola-mundo:v1.0
+```
+
+## 📁 Estructura del proyecto
+```
+app-hola-mundo/
+│
+├── app.py              # Aplicación Flask
+├── requirements.txt    # Dependencias Python
+├── Dockerfile         # Instrucciones para crear la imagen
+└── README.md          # Documentación
+```
+
+## 🛑 Comandos útiles
+```bash
+# Ver contenedores en ejecución
+docker ps
+
+# Detener el contenedor
+docker stop mi-app
+
+# Eliminar el contenedor
+docker rm mi-app
+
+# Ver logs del contenedor
+docker logs mi-app
+```
+
+## 👤 Autor
+
+**Guajo05**
+
+## 📝 Licencia
+
+Este proyecto es de código abierto y está disponible para uso educativo.
+```
+
+4. **Guarda el archivo:**
+   - En la carpeta `app-hola-mundo`
+   - Con el nombre: `README.md`
+
+---
+
+### **PASO 6.2: Crear archivo .gitignore**
+
+1. **Abre tu editor de texto**
+
+2. **Crea un archivo nuevo**
+
+3. **Escribe esto:**
+```
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# Flask
+instance/
+.webassets-cache
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Docker
+.dockerignore
+
+# Sistema
+.DS_Store
+Thumbs.db
